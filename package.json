@@ -2,7 +2,7 @@
   "name": "personalwebsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KaytonFletcher.github.io/PersonalWebsite",
+  "homepage": "https://KaytonFletcher.com",
   "dependencies": {
     "@reach/router": "github:reach/router",
     "gh-pages": "^2.0.1",
