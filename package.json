@@ -2,7 +2,7 @@
   "name": "personalwebsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KaytonFletcher.com",
+  "homepage": "https://kaytonfletcher.com",
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/lab": "^4.0.0-alpha.50",
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp CNAME build/CNAME",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
