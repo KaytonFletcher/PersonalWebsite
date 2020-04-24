@@ -7,8 +7,8 @@ import useInterval from '../../Hooks/useInterval';
 const Beaker = () => {
     const [defaultPos] = React.useState({x: 100, y: 220});
     const [deltaPosition, setDeltaPosition] = React.useState({x: 0, y:0});
-    const [position, setPosition] = React.useState(null);
-    const [beaker, setBeaker] = React.useState(null);
+    const [falling, setFalling] = React.useState(false);
+    const [position, setPosition] = React.useState(defaultPos);
     const [rotation, setRotation] = React.useState(0);
 
     // React.useEffect(() => {
@@ -20,14 +20,17 @@ const Beaker = () => {
     //     };
     // }, []);
     
-    const handleStop = (e) => {
+    const handleStop = () => {
         const currentPos = {x: deltaPosition.x + defaultPos.x, y: deltaPosition.y + defaultPos.y};
-        //if manual position isn't null, beaker is falling
+        
+   
         setPosition(currentPos);
+        setFalling(true);
+        
     }
 
     const applyGravity = () => {
-        if(position !== null){
+        if(falling){
             setPosition({...position, y: position.y + 9.8});
             setRotation(45);
 
@@ -35,16 +38,16 @@ const Beaker = () => {
             if(position.y > 200){
                 //resets height delta to 0
                 setDeltaPosition({...deltaPosition, y:0})
-                setPosition(null);
+                setFalling(false);
             }
         }
     }
 
-    const handleDrag = (e, ui) => {
+    const handleDrag = (e: any, ui: any) => {
         setDeltaPosition({x: (deltaPosition.x + ui.deltaX), y: (deltaPosition.y + ui.deltaY)} );
     }
 
-    useInterval(applyGravity, (position !== null) ? 10 : null);
+    useInterval(applyGravity, (falling) ? 10 : null);
 
     return (
         <Draggable defaultPosition={defaultPos}  position={position} onDrag={handleDrag} onStop={handleStop}>
