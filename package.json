@@ -5,11 +5,11 @@
   "homepage": "https://KaytonFletcher.com",
   "dependencies": {
     "@reach/router": "github:reach/router",
-    "gh-pages": "^2.0.1",
-    "hash-source": "^1.0.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "gh-pages": "^2.2.0",
+    "hash-source": "^1.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
