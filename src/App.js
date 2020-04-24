@@ -2,6 +2,7 @@ import React from 'react';
 
 import './App.css';
 import ScienceLab from './Components/ScienceLab';
+import Beaker from './Components/Beaker';
 
 const lightTheme = {
   "--color-solid": "black",
@@ -35,6 +36,7 @@ const App = () => {
     <div>
        <h1>{currentTheme === "light" ? "Light theme" : "Dark theme"}</h1>
       <button onClick={onClick}>Toggle theme</button>
+      <Beaker/>
       <ScienceLab></ScienceLab>
     </div>
   );
